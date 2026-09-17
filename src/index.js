@@ -8,8 +8,14 @@ if (isNaN(a) || isNaN(b)) {
     throw new Error('invalid input');
 }
 
-const n = 1000;
+if (a > b) {
+    alert('point a should be less than or equal to point b')
+} else {
+    const n = 100000;
 
-const result = integral(f, a, b, n, 'midpoint');
+    let method = prompt('enter integration method', 'midpoint')
+    const result = integral(f, a, b, n, method);
 
-console.log('integration result:', result);
+    console.log('integration result:', result);
+    alert(`integration result: ${result}`)
+}
